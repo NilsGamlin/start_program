@@ -1,5 +1,5 @@
 # start_program
 
-Idea: 
+**Idea**: 
 - [ ] Do an interface(clickable app like buttons)
 	- [ ]  create a searchbar.  
