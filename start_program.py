@@ -1,15 +1,19 @@
-import os.path #import veut donc dire qu'il faut avoir une connection internet, je vais donc devoir "installer" os.path non ?
+#FONCTION QUI PERMET DE DETERMINER LES FICHIERS "exe"; D'UN DOSSIER, INCLUANT LES SOUS-DOSSIERS.
+import os.path
+import os
 
-folder_list = [d for d in os.listdir('C:\Program Files (x86)') if os.path.isdir(os.path.join('C:\Program Files (x86)', d))] # ca j'ai pompé d'internet en gros ca créer une liste avec le nom de tout les dossiers. 
-#print(dirs)
+def list_exe_files(directory):
+    path_list = [] #le nom doit être différent que "root",(risque de confusion sinon, à cause de la première boucle "for).
+    exe_files_list = []
+    for root, dirs, files in os.walk(directory):
+        for name in files:
+            path_list.append(os.path.join(root, name))
+            #root est une liste avec les racins de chaque fichier contenu dans le fichier du programme voulu
+    for i in range(len(root)):
+        if path_list[i].endswith(".exe"): #"endswith" d'identifiers quel est le type d'un fichier, donc de trier les fichiers "exe", des autres.
+            
+            exe_files_list += [path_list[i]]
+    ##return root
+    return exe_files_list
 
-user_input = input("Which program do you want to start ?")
-
-for i in range(len(folder_list)):
-    if user_input == str.lower(folder_list[i]):
-        #print(directory[i])
-        wanted_folder = "C:\Program Files (x86)\%s"%folder_list[i]
-        print(wanted_folder)
-        for file in os.listdir(wanted_folder):
-            if file.endswith(".exe"):
-                print(1)
+list_exe_files('C:\Program Files (x86)\Google')
