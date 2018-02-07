@@ -8,9 +8,9 @@ def list_exe_files(directory):
     for root, dirs, files in os.walk(directory):
         for name in files:
             path_list.append(os.path.join(root, name))
-            #root est une liste avec les racins de chaque fichier contenu dans le fichier du programme voulu
+            #root est une liste avec les racines de chaque fichier contenu dans le dossier du programme voulu
     for i in range(len(root)):
-        if path_list[i].endswith(".exe"): #"endswith" d'identifiers quel est le type d'un fichier, donc de trier les fichiers "exe", des autres.
+        if path_list[i].endswith(".exe"): #"endswith" permet d'identifier quel est le type d'un fichier, donc de trier les fichiers "exe", des autres.
             
             exe_files_list += [path_list[i]]
     ##return root
