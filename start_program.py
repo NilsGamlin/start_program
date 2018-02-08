@@ -56,7 +56,6 @@ while True:
     wanted_directory = input("Which directory ?")
     wanted_program = input("Which program do you want to start ?")
     directory = "C:\Program Files (x86)\%s\%s" %(wanted_directory, wanted_program)
-    exe_files = list_exe_files(directory)
-    find_correct_exe_file(exe_files, wanted_program)
+    find_correct_exe_file(list_exe_files(directory), wanted_program)
     
     #works only with Google chrome at the moment
