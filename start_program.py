@@ -30,7 +30,6 @@ def find_correct_exe_file(list_of_all_exe_files, application_name):
         
         
 #------------------------------------------------Prototype 1--------------------------------------------------------------------------------
-import os.path
 import os
 
 def list_exe_files(directory):
@@ -58,4 +57,4 @@ while True:
     directory = "C:\Program Files (x86)\%s\%s" %(wanted_directory, wanted_program)
     find_correct_exe_file(list_exe_files(directory), wanted_program)
     
-    #works only with Google chrome at the moment
+    #works only with Programs in the Program Files(x86), and if the folder name/file name is known precisely(example: folder name : "GeoGebra 5.0", file name : "GeoGebra".
